@@ -25,5 +25,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install -g @tarojs/cli
     - run: cd ./myApp && npm install
-    - run: cd ./myApp && npm run build:tt
+    - run: cd ./myApp && npm run build:wx
+    - run: cd ./wechaMinProgramCd && npm install && node cd.js
