@@ -27,5 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g @tarojs/cli
     - run: cd ./myApp && npm install
-    - run: cd ./myApp && npm run build:wx
+    - run: cd ./myApp && npm run build:weapp
     - run: cd ./wechaMinProgramCd && npm install && node cd.js
