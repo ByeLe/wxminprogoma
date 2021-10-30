@@ -28,4 +28,4 @@ jobs:
     - run: npm install -g @tarojs/cli
     - run: cd ./myApp && npm install
     - run: cd ./myApp && npm run build:weapp
-    - run: cd ./wechaMinProgramCd && npm install && node cd.js
+    - run: cd .. && cd ./wechaMinProgramCd && npm install && node cd.js
