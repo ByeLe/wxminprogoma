@@ -9,6 +9,7 @@ const project = new ci.Project({
     privateKeyPath: './private.wxd2984809fc4c86c2.key',
     ignores: ['node_modules/**/*'],
 })
+console.log('kaishi ')
 const uploadResult = await ci.upload({
     project,
     version: version,
