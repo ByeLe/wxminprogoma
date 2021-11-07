@@ -61,4 +61,4 @@ const  init = async () => {
         upload(result.version, result.versionDesc);
     }
 };
-init();
+upload();
