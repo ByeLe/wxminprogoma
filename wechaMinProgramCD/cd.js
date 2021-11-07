@@ -61,4 +61,4 @@ const  init = async () => {
         upload(result.version, result.versionDesc);
     }
 };
-upload();
+upload('1.1.12', '我是githubAction的cicd流程');
