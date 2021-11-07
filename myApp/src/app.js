@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import './app.scss'
 
-import { proxySetData, setReadyStart } from '../../../../utils/proxy';
+// import { proxySetData, setReadyStart } from '../../../../utils/proxy';
 
-proxySetData({
-  console: true,
-  ready: true
-});
+// proxySetData({
+//   console: true,
+//   ready: true
+// });
 const App = {
   onShow (options) {
   },
