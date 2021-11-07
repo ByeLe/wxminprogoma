@@ -26,7 +26,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   false,
   null,
   null,
-  "ea23628c"
+  "1b13b9a2"
   
 )
 
@@ -44,8 +44,21 @@ component.options.__file = "src/pages/index/index.vue"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ "./src/pages/index/index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.scss */ "./src/pages/index/index.scss");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../common/http */ "./src/common/http.js");
+
+
+
+//
+//
+//
+//
+//
 //
 //
 //
@@ -53,11 +66,81 @@ component.options.__file = "src/pages/index/index.vue"
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
+      peopleList: [],
+      times: [],
       msg: 'Hello world, Trao!'
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    return Object(_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])( /*#__PURE__*/_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee() {
+      return _Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              // console.log('Taro----', Taro);
+              _this.getPeople();
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  methods: {
+    getPeople: function getPeople() {
+      var _this2 = this;
+
+      return Object(_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])( /*#__PURE__*/_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2() {
+        var temp, nextArr, startTime;
+        return _Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return Object(_common_http__WEBPACK_IMPORTED_MODULE_4__[/* get */ "a"])('/peopleList', {}, {});
+
+              case 2:
+                temp = _context2.sent;
+                console.log('temp----', temp);
+                nextArr = [].concat(Object(_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_this2.peopleList), Object(_Users_mac_Desktop_githubAction_wxminprogoma_myApp_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(temp.data)); // console.log('nextArr----', nextArr);
+
+                startTime = new Date().getTime();
+
+                if (!(nextArr.length > 1000)) {
+                  _context2.next = 9;
+                  break;
+                }
+
+                console.log(_this2.times);
+                return _context2.abrupt("return");
+
+              case 9:
+                _this2.peopleList = nextArr;
+
+                _this2.$nextTick(function () {
+                  var endTime = new Date().getTime();
+
+                  _this2.times.push(endTime - startTime);
+
+                  _this2.getPeople();
+                });
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
   }
 });
 
@@ -78,9 +161,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("view", { staticClass: "index" }, [
-    _c("text", [_vm._v(_vm._s(_vm.msg))])
-  ])
+  return _c(
+    "view",
+    _vm._l(_vm.peopleList, function(item, index) {
+      return _c("view", { key: index, staticClass: "user-content" }, [
+        _c("view", [_vm._v("这是姓名")]),
+        _c("view", [_vm._v("这是ID")]),
+        _c("view", [_vm._v("这是性别")])
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -198,6 +289,49 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ "./src/common/http.js":
+/*!****************************!*\
+  !*** ./src/common/http.js ***!
+  \****************************/
+/*! exports provided: get */
+/*! exports used: get */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return get; });
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/taro */ "./node_modules/@tarojs/taro/index.js");
+/* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_0__);
+
+var domain = 'http://localhost:8081';
+var get = function get(url) {
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var headers = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var keys = Object.keys(params);
+  var queryStr = '';
+  keys.forEach(function (item) {
+    queryStr += "".concat(item, "=").concat(params[item], "&");
+  });
+
+  if (queryStr.length !== 0) {
+    queryStr.slice(0, queryStr.length - 1);
+    url += "?".concat(queryStr);
+  }
+
+  ;
+  return new Promise(function (resolve, reject) {
+    _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default.a.request({
+      url: "".concat(domain).concat(url),
+      method: 'GET',
+      success: function success(res) {
+        console.log(res);
+        resolve(res.data);
+      }
+    });
+  });
+};
 
 /***/ }),
 

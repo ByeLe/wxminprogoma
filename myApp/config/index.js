@@ -1,11 +1,12 @@
 const config = {
   projectName: 'myApp',
   date: '2021-10-17',
-  designWidth: 750,
+  designWidth: 375,
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
-    828: 1.81 / 2
+    828: 1.81 / 2,
+    375 : 1 / 1
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
